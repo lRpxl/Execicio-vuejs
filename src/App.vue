@@ -1,7 +1,6 @@
-
 <script>
-import EntradaNum from './components/entradaNum.vue';
-import Selecao from './components/selecao.vue';
+import EntradaNum from './components/EntradaNum.vue';
+import Selecao from './components/Selecao.vue';
 
 export default {
   components: {
@@ -10,8 +9,8 @@ export default {
   },
   data() {
     return {
-      num1: '',    // Inicializar como string vazia para permitir entrada de dados
-      num2: '',    // Inicializar como string vazia
+      num1: '', 
+      num2: '', 
       operation: '+'
     };
   },
@@ -33,23 +32,19 @@ export default {
           return 0;
       }
     }
-  },
-  methods: {
-    setOperation(op) {
-      this.operation = op;
-    }
   }
 };
 </script>
 
 <template>
   <div class="calculator">
-    <h2>Calculadora Aritmetica</h2>
+    <h2>Calculadora Aritmética</h2>
+
     <!-- Primeiro campo de número -->
     <EntradaNum v-model="num1" />
 
     <!-- Campo de seleção de operação -->
-    <Selecao @select-operation="setOperation" />
+    <Selecao v-model="operation" />
 
     <!-- Segundo campo de número -->
     <EntradaNum v-model="num2" />

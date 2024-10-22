@@ -1,6 +1,6 @@
 <template>
   <div class="operation-select">
-    <select @change="$emit('select-operation', $event.target.value)">
+    <select @change="$emit('update:modelValue', $event.target.value)" :value="modelValue">
       <option value="+">+</option>
       <option value="-">-</option>
       <option value="*">*</option>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: ['value']
+  props: ['modelValue'] // Usando v-model nativo
 };
 </script>
 
